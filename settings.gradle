@@ -1,0 +1,12 @@
+rootProject.name = 'SimpleDisplays'
+include '_1_20'
+include 'nms:_1_19'
+findProject(':nms:_1_19')?.name = '_1_19'
+include 'nms:_1_20'
+findProject(':nms:_1_20')?.name = '_1_20'
+include 'nms:_common'
+findProject(':nms:_common')?.name = '_common'
+include 'core'
+include 'plugin'
+include 'api'
+

@@ -1,0 +1,14 @@
+name: SimpleDisplays
+main: eu.virtusdevelops.simpledisplays.plugin.SimpleDisplays
+api-version: 1.19
+version: @version@
+
+
+softdepend:
+  - "PlaceholderAPI"
+
+commands:
+  sreload:
+    description: "Reloads the plugin, what do you think??=?=?"
+    permission: "simpledisplays.reload"
+    usage: "/<command>"

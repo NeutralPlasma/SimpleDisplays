@@ -1,0 +1,6 @@
+name: SimpleDisplays
+version: '${version}'
+main: eu.virtusdevelops.simpledisplays.SimpleDisplays
+api-version: 1.19
+authors: [ NeutralPlasma ]
+description: Packet based holograms for ya needs
