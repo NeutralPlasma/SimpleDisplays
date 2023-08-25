@@ -18,11 +18,12 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.1-R0.1-SNAPSHOT")
 
 
-    implementation group: "eu.virtusdevelops", name: "VirtusCore", version: "1.0.9.9.1"
+    implementation group: "eu.virtusdevelops", name: "VirtusCore", version: "1.0.9.9.2"
     implementation(project(":nms:_common"))
     implementation(project(":nms:_1_19"))
     implementation(project(":nms:_1_20"))
     implementation(project(":core"))
+    implementation(project(":api"))
 }
 
 processResources {

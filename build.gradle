@@ -39,6 +39,12 @@ allprojects {
 
 dependencies {
     implementation project("core")
+    implementation project("plugin")
+    implementation project("api")
+    implementation project(":nms:_1_20")
+    implementation project(":nms:_1_19")
+    implementation project(":nms:_common")
+
 }
 
 def targetJavaVersion = 17
