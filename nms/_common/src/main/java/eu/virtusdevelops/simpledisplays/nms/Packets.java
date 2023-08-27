@@ -1,7 +1,7 @@
 package eu.virtusdevelops.simpledisplays.nms;
 
-import eu.virtusdevelops.simpledisplays.models.BlockEntityLocation;
-import eu.virtusdevelops.simpledisplays.models.ItemSlot;
+import eu.virtusdevelops.simpledisplays.core.models.BlockEntityLocation;
+import eu.virtusdevelops.simpledisplays.core.models.ItemSlot;
 
 import org.bukkit.Color;
 import org.bukkit.entity.Player;

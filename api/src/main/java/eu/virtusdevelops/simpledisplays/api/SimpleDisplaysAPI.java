@@ -1,6 +1,7 @@
 package eu.virtusdevelops.simpledisplays.api;
 
 import eu.virtusdevelops.simpledisplays.api.hologram.Hologram;
+import eu.virtusdevelops.simpledisplays.api.internal.SimpleDisplaysApiProvider;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,10 +17,9 @@ public interface SimpleDisplaysAPI {
      *
      * @param plugin
      * @return
-     * @since 1
      */
     static @NotNull SimpleDisplaysAPI get(@NotNull Plugin plugin) {
-        return null;
+        return SimpleDisplaysApiProvider.getImplementation().getSimpleDisplaysAPI(plugin);
     }
 
     /**

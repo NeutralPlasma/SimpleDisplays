@@ -13,8 +13,15 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.13.1-R0.1-SNAPSHOT'
+    compileOnly("io.papermc.paper:paper-api:1.19.1-R0.1-SNAPSHOT")
     compileOnly group: "me.clip", name: 'placeholderapi', version: '2.11.3'
+
+
+    implementation group: "eu.virtusdevelops", name: "VirtusCore", version: "1.0.9.9.2"
+    implementation(project(":api"))
+    implementation(project(":nms:_common"))
+    implementation(project(":nms:_1_19"))
+    implementation(project(":nms:_1_20"))
 }
 
 test {

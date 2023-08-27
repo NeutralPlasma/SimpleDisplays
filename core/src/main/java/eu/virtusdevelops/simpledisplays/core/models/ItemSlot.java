@@ -1,4 +1,4 @@
-package eu.virtusdevelops.simpledisplays.models;
+package eu.virtusdevelops.simpledisplays.core.models;
 
 public enum ItemSlot {
     NONE(0),

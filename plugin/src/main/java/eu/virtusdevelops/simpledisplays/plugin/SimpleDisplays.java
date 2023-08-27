@@ -2,6 +2,8 @@ package eu.virtusdevelops.simpledisplays.plugin;
 
 import eu.virtusdevelops.simpledisplays.api.Location;
 import eu.virtusdevelops.simpledisplays.api.SimpleDisplaysAPI;
+import eu.virtusdevelops.simpledisplays.core.SimpleDisplaysCore;
+import eu.virtusdevelops.simpledisplays.core.models.EnableException;
 import eu.virtusdevelops.simpledisplays.nms.Packets;
 import eu.virtusdevelops.simpledisplays.nms.Packets_1_19_R1;
 import eu.virtusdevelops.simpledisplays.nms.Packets_1_20_R1;
@@ -17,28 +19,28 @@ import java.util.Set;
 
 public class SimpleDisplays extends JavaPlugin {
     private SimpleDisplaysAPI api;
-    private Packets packets;
+    private SimpleDisplaysCore core;
 
     @Override
     public void onEnable(){
 
-        packets = switch (ServerVersion.getServerVersion()){
-            case V1_19 -> new Packets_1_19_R1();
-            case V1_20 -> new Packets_1_20_R1();
-            default -> null;
-        };
+        core = new SimpleDisplaysCore();
+        try {
+            core.enable(this);
+        } catch (EnableException e) {
 
-        if(packets == null){
             getLogger().severe(
-                    "Could not find proper packets NMS, please use support version of minecraft. (\u001B[35m%s\u001B[91m)\u001B[0m"
-                            .formatted(ServerVersion.getServerVersionString()));
+                    e.getMessage()
+            );
 
             VirtusCore.plugins().disablePlugin(this);
             return;
         }
+
+
         // api load
         api = SimpleDisplaysAPI.get(this);
-        
+
         // load dependency injection (PAPI)
 
 
@@ -73,11 +75,6 @@ public class SimpleDisplays extends JavaPlugin {
                         this.getDescription().getVersion())
         );
 
-    }
-
-
-    public Packets getPackets(){
-        return packets;
     }
 
     public void reload(){

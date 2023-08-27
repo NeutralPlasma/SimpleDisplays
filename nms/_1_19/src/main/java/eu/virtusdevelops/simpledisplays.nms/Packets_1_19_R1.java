@@ -1,7 +1,7 @@
 package eu.virtusdevelops.simpledisplays.nms;
 
-import eu.virtusdevelops.simpledisplays.models.BlockEntityLocation;
-import eu.virtusdevelops.simpledisplays.models.ItemSlot;
+import eu.virtusdevelops.simpledisplays.core.models.BlockEntityLocation;
+import eu.virtusdevelops.simpledisplays.core.models.ItemSlot;
 import io.papermc.paper.adventure.PaperAdventure;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minecraft.network.chat.Component;
